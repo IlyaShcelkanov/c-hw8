@@ -38,10 +38,12 @@ int[,] MultiplicationMatrix(int[,] matrix1, int[,] matrix2)
     {
         for (int j = 0; j < result.GetLength(1); j++)
         {
+            int sum = 0;
             for (int k = 0; k < result.GetLength(1); k++)
             {
-                result[i, j] += matrix1[i, k] * matrix2[k, j];
+                sum += matrix1[i, k] * matrix2[k, j];
             }
+            result[i,j] = sum;
         }
     }
     return result;
